@@ -1,4 +1,6 @@
-public class Contantes{
+package DS;
+
+public class Contantes {
     static final float PI = 3.14159264f;
 
     public static void main(String args[]){

@@ -1,4 +1,6 @@
 //  Caixa de dialogo com entrada de dados
+package DS;
+
 
 import javax.swing.*;
 public class EntradaComJOptionPane{

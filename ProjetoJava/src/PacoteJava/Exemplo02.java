@@ -1,4 +1,4 @@
-package DS;
+package PacoteJava;
 
 public class Exemplo02{
     public static int num1;

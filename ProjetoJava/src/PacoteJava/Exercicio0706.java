@@ -1,4 +1,4 @@
-package DS;
+package PacoteJava;
 
 import javax.swing.*;
 

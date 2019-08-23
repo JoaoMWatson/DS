@@ -3,9 +3,9 @@ package PacoteJava;
 import javax.swing.*;
 
 public class Exercicio0706 {
-    public static void calcular(String[] args) {    
+    public static void main(String[] args) {    
         String aux = "";
-        float salario = 0, aliquota = 0, desconto = 0, liquido = 0;
+        double salario = 0, aliquota = 0, desconto = 0, liquido = 0;
        
         aux = JOptionPane.showInputDialog(null, "De o seu salario: ");
         salario = Float.parseFloat(aux);
@@ -16,20 +16,22 @@ public class Exercicio0706 {
         } else {
             if (salario <= 965.67) {
                 aliquota = 8; 
-                desconto = aliquota / 100 - salario;
-            } else if (salario >= 965.68) {
-                aliquota = salario * 9 / 100;
-            } else if (salario >= 1609.46) {
-                aliquota = salario * 11 / 100;
+                desconto = salario * aliquota / 100;
+            } if (salario >= 965.68) {
+                aliquota = 9;
+                desconto = salario * aliquota / 100;
+            } if (salario >= 1609.46) {
+                aliquota = 11;
+                desconto = salario *aliquota / 100;
             }
         }
         if (aliquota > 354.67) {
-            aliquota = 354.67f;
+            aliquota = 354.67;
 
         } else {
-            liquido = desconto - salario;
+            liquido = salario-desconto;
         }
-        JOptionPane.showMessageDialog(null,"O seu alario inicial é de: "+ salario + "A aliquota aplicada ao mesmo foi de: "
-        +aliquota+"\nAo total foram descontados: R$"+desconto+"\nValor liquido total: R$"+liquido);
+        JOptionPane.showMessageDialog(null,"O seu alario inicial é de: "+ salario + ". A aliquota aplicada ao mesmo foi de: "
+        +aliquota+"\nAo total foram descontados R$"+desconto+"\nValor liquido total R$"+liquido);
     }
 }

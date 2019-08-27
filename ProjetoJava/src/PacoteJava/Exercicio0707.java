@@ -2,20 +2,32 @@ package PacoteJava;
 
 import javax.swing.*;
 
+// if(variavel.equals(" ")) retorna boolean
+
 public class Exercicio0707 {
-    public static void main(String[] args){
-        double peso = 0, altura = 0, imc = 0;
-        String aux = "";
-        try{
+    static double peso = 0, altura = 0, imc = 0;
+    static String aux = "";
+    
+    public static void leitura(){
+        
         aux = JOptionPane.showInputDialog(null, "De o seu peso: ");
-        peso = Float.parseFloat(aux);
+        peso = Double.parseDouble(aux);
         
         aux = JOptionPane.showInputDialog(null, "De o seu altura: ");
-        altura = Float.parseFloat(aux);
-        }catch(NumberFormatException error1){
-            JOptionPane.showMessageDialog(null, 
-                    "Você digitou um valor invalido");
+        altura = Double.parseDouble(aux);   
         }
+    
+    public static void main(String[] args){
+        try{
+            leitura();
+            }
+            catch(NumberFormatException error1){
+                JOptionPane.showMessageDialog(null, 
+                        "Você digitou um valor invalido!"
+                                + "\nFavor, inserir apenas numeros");
+                leitura();
+            }
+        
         if(altura > 0.1 && peso > 0.5){
             try{
                 imc = peso / (altura * altura);
@@ -43,6 +55,5 @@ public class Exercicio0707 {
                 JOptionPane.showMessageDialog(null, "Resultado invalido");
            }
         }
-    }
-        
+    }       
 }

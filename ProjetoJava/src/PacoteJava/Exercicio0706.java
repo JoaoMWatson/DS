@@ -6,13 +6,24 @@ public class Exercicio0706 {
     public static void main(String[] args) {    
         String aux = "";
         double salario = 0, aliquota = 0, desconto = 0, liquido = 0;
-       
+        
+       try{
         aux = JOptionPane.showInputDialog(null, "De o seu salario: ");
-        salario = Float.parseFloat(aux);
-
+        aux = aux.replace(",", ".");
+        salario = Double.parseDouble(aux);
+        
+        
+       }catch(NullPointerException error1){
+           JOptionPane.showMessageDialog(null, "Valor inserido invalido");
+           
+       }catch(NumberFormatException error2){
+           JOptionPane.showMessageDialog(null, "Valor inserido invalido!");
+       }
+       
         if (salario <= 465.00) {
-            JOptionPane.showMessageDialog(null, "Salario invalido");
+            JOptionPane.showMessageDialog(null, "O seu salario não recebera deconto");
             System.exit(0);
+            
         } else {
             if (salario <= 965.67) {
                 aliquota = 8; 

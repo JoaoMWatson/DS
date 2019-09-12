@@ -1,9 +1,6 @@
 package PacoteJava;
 
 public class Operacoes{
-    public static void main(String[] args){
-        
-    }
     public static double somar(double valor1, double valor2){
        return valor1 + valor2;
     }
